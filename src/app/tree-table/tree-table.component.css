@@ -1,0 +1,27 @@
+.tree-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tree-table th,
+  .tree-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .tree-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .tree-table tbody .parent-row {
+    background-color: #e6f7ff; /* Light blue for parent rows */
+  }
+  
+  .tree-table tbody .child-row {
+    background-color: #f0f0f0; /* Light gray for child rows */
+  }
+  
+  .tree-table button {
+    margin-right: 5px;
+  }
+  

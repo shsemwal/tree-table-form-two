@@ -1,0 +1,31 @@
+<table class="tree-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Type</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template #recursiveTree let-rows>
+        <ng-container *ngFor="let row of rows; let i = index">
+          <tr [ngClass]="{'parent-row': !row.parent, 'child-row': row.parent}">
+            <td><input type="text" [(ngModel)]="row.data.name"></td>
+            <td><input type="text" [(ngModel)]="row.data.size"></td>
+            <td><input type="text" [(ngModel)]="row.data.type"></td>
+            <td>
+              <button (click)="addChild(row)">Add Child</button>
+              <!-- <button (click)="removeRow(i)">Remove</button> -->
+            </td>
+          </tr>
+          <ng-container *ngTemplateOutlet="recursiveTree; context:{ $implicit: row.children, rowIndex: i }"></ng-container>
+        </ng-container>
+      </ng-template>
+      <ng-container *ngTemplateOutlet="recursiveTree; context:{ $implicit: rows, rowIndex: null }"></ng-container>
+    </tbody>
+  </table>
+  
+  <button (click)="addRow()">Add Row</button>
+  <button (click)="submitForm()">Submit</button>
+  
