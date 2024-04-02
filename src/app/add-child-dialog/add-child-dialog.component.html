@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Add Child</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Size" [(ngModel)]="size">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Type" [(ngModel)]="type">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="save()">Save</button>
+  <button mat-button (click)="close()">Cancel</button>
+</mat-dialog-actions>
